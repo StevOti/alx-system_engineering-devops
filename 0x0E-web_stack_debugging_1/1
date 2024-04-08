@@ -1,2 +1,2 @@
- * Restarting nginx nginx
-   ...done.
+sudo: netstat: command not found
+sudo: ufw: command not found
