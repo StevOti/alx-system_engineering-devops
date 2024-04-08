@@ -1,27 +1,6 @@
 #!/usr/bin/env bash
-
-# Remove the default Nginx configuration file if it exists
-rm -f /etc/nginx/sites-enabled/default
-
-# Create a new Nginx configuration file to listen on port 80 for all active IPv4 IPs
-cat <<EOF > /etc/nginx/sites-available/default
-server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-
-    root /var/www/html;
-    index index.html index.htm index.nginx-debian.html;
-
-    server_name _;
-
-    location / {
-        try_files \$uri \$uri/ =404;
-    }
-}
-EOF
-
-# Create a symbolic link to enable the new configuration
-ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-
-# Restart Nginx to apply the changes
+#configure nginx server to listen for port 80
+#this is spam
+#this is spam
+sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
 service nginx restart
